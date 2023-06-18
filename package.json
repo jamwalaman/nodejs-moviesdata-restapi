@@ -4,6 +4,8 @@
   "description": "Movies Database app created with MERN stack",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aman Jamwal",
@@ -13,5 +15,8 @@
     "config": "^3.3.9",
     "express": "^4.18.2",
     "mongoose": "^7.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
