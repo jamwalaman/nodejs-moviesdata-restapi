@@ -1,6 +1,9 @@
 {
   "name": "movies-data-mern",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=v18.12.1"
+  },
   "description": "Movies Database app created with MERN stack",
   "main": "app.js",
   "scripts": {
