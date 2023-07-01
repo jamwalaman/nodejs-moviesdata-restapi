@@ -19,6 +19,6 @@ app.get('/', (req, res) => res.send('Hello world!'));
 
 app.use('/api/movies', movies);
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 
 app.listen(port, "0.0.0.0", () => console.log(`Server running on port ${port}`));
