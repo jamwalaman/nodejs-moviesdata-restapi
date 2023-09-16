@@ -1,5 +1,7 @@
 # NodeJS rest api
-NodeJS rest api with auth
+### NodeJS rest api with auth
+
+Documentation also available at https://documenter.getpostman.com/view/6550608/2s9YC5wrJh
 
 `GET /api/movies` - Gets a list of all movies
 ```json
@@ -28,7 +30,7 @@ NodeJS rest api with auth
   }
 ]
 ```
-`GET /api/movies/[movieID]` - Get one movie
+`GET /api/movies/:movieID` - Get one movie
 ```json
 {
   "_id": "64dedb89295ebc62c1cf1da3",
@@ -43,4 +45,70 @@ NodeJS rest api with auth
 }
 ```
 
-`POST /api/uses`
+`POST /api/users` - Register user
+
+**email** `example@email.com`
+
+**name** example007
+
+**password** pass
+```json
+{
+  "name": "example007",
+  "email": "example@email.com",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDJkZWYyNWJmNjU4ZmRhYTMwMDNhNSIsImlhdCI6MTY5NDY4Njk2MiwiZXhwIjoxNjk3Mjc4OTYyfQ.VIZ8K9sFrlcsFp0MOBASQkt8j3VbIyb36AdRtBcZ340"
+}
+```
+
+`POST /api/users/login` - Login user
+
+**emailLogin** `example@email.com`
+
+**passwordLogin** pass
+```json
+{
+  "name": "example007",
+  "email": "example@email.com",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDJkZWYyNWJmNjU4ZmRhYTMwMDNhNSIsImlhdCI6MTY5NDgyMDc3OCwiZXhwIjoxNjk3NDEyNzc4fQ.nrWgG-lW0Y6RHVc9Ebak003T5nbLSu9zSfXEnp2AdBs"
+}
+```
+`POST /api/movies`
+
+`Authorization - Bearer Token`
+
+**title** Casino Royale
+
+**director** Martin Campbell
+
+**synopsis** Special Agent James Bond embarks on a mission to prevent Le Chiffre, a mob banker, from winning a high stakes poker game. He is aided by Vesper Lynd, a British Treasury agent.
+```json
+{
+  "user": "6502def25bf658fdaa3003a5",
+  "username": "example007",
+  "title": "Casino Royale",
+  "director": "Martin Campbell",
+  "synopsis": "Special Agent James Bond embarks on a mission to prevent Le Chiffre, a mob banker, from winning a high stakes poker game. He is aided by Vesper Lynd, a British Treasury agent.",
+  "_id": "6504eb595bf658fdaa3003b3",
+  "createdAt": "2023-09-15T23:40:09.652Z",
+  "updatedAt": "2023-09-15T23:40:09.652Z",
+  "__v": 0
+}
+```
+`PUT /api/movies/:movieID`
+
+`Authorization - Bearer Token`
+
+**title** Casino Royale - James Bond
+```json
+{
+  "_id": "6504eb595bf658fdaa3003b3",
+  "user": "6502def25bf658fdaa3003a5",
+  "username": "example007",
+  "title": "Casino Royal - James Bond",
+  "director": "Martin Campbell",
+  "synopsis": "Special Agent James Bond embarks on a mission to prevent Le Chiffre, a mob banker, from winning a high stakes poker game. He is aided by Vesper Lynd, a British Treasury agent.",
+  "createdAt": "2023-09-15T23:40:09.652Z",
+  "updatedAt": "2023-09-15T23:45:55.460Z",
+  "__v": 0
+}
+```
